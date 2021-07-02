@@ -14,6 +14,20 @@ public class CareerRepo {
         careerList.add(softwareEngineer);
     }
 
+    public static void updateMethod(String oldJobTitle, String newJobTitle, String newDescription, double newSalary){
+
+        for(Career career : getCareerList()){
+            if(career.getJobTitle().equals(oldJobTitle)){
+                career.setJobTitle(newJobTitle);
+                career.setJobDescription(newDescription);
+                career.setSalary(newSalary);
+                return;
+            }
+        }
+
+    }
+
+
     public static List<Career> getCareerList() {
         return careerList;
     }
