@@ -1,38 +1,41 @@
 package com.career.careerAPI;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
+@Component
+public class CareerRepo {
 
-public class careerRepo {
-
-    List<Career> careerList = new ArrayList<>();
+    static List<Career> careerList = new ArrayList<>();
 
     static{
         Career softwareEngineer = new Career("Software Engineer", "Build App's,", 1000.00);
+        careerList.add(softwareEngineer);
     }
 
-    public List<Career> getCareerList() {
+    public static List<Career> getCareerList() {
         return careerList;
     }
 
-    public void addCareer(Career newCareer){
+    public static void addCareer(Career newCareer){
         careerList.add(newCareer);
     }
 
-    public void deleteAllCareer(){
+    public static void deleteAllCareer(){
         careerList.clear();
     }
 
-    public void deleteCareer(String delCareer){
+    public static Boolean deleteCareer(String delCareer){
         for(Career career : getCareerList()) {
             if (career.getJobTitle().equals(delCareer)) {
-                careerList.remove(career);
+                return careerList.remove(career);
             }
         }
-
+        return null ;
     }
 
-    public Career searchCareer(String theCareer){
+    public static Career searchCareer(String theCareer){
        for(Career career : getCareerList()){
            if(career.getJobTitle().equals(theCareer)){
                return career;
