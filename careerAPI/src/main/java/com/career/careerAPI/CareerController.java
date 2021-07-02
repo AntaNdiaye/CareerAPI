@@ -9,38 +9,39 @@ import java.util.List;
 @RestController
 public class CareerController {
         @Autowired
-        CareerRepo careerRepo ;
+        CareerService careerService;
 
-        public CareerController(CareerRepo careerRepo) {
-            this.careerRepo = careerRepo;
+        public CareerController(CareerService careerService) {
+            this.careerService = careerService;
         }
+
+
     @PutMapping("/Careers/{oldJobTitle}")
         public void updateCareer(@PathVariable String oldJobTitle ,@RequestBody Career upCareer){
-            CareerRepo.updateMethod(oldJobTitle,upCareer);
+            careerService.updateMethod(oldJobTitle,upCareer);
     }
     @GetMapping("/Careers")
         public List<Career> allCareers() {
-            return CareerRepo.getCareerList();
+            return careerService.getCareerList();
         }
 
         @GetMapping("/Careers/{theCareer}")
         public Career searchCareers(@PathVariable String theCareer) {
-            return CareerRepo.searchCareer(theCareer);
+            return careerService.searchCareer(theCareer);
         }
 
         @PostMapping("/Career")
         public void addCareer(@RequestBody Career newcareer) {
-            CareerRepo.addCareer(newcareer);
-
+            careerService.addCareer(newcareer);
         }
 
         @DeleteMapping("/Careers")
         public void deleteAllCareer() {
-            CareerRepo.deleteAllCareer();
+            careerService.deleteAllCareer();
         }
         @DeleteMapping("/Careers/{delCareer}")
         public Boolean deleteCareer(@PathVariable String delCareer) {
-            return CareerRepo.deleteCareer(delCareer);
+            return careerService.deleteCareer(delCareer);
     }
 
 

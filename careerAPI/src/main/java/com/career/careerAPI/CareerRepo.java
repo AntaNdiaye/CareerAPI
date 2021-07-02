@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 @Component
-public class CareerRepo {
+public class CareerRepo implements CareerService{
 
     static List<Career> careerList = new ArrayList<>();
 
@@ -13,8 +13,8 @@ public class CareerRepo {
         Career softwareEngineer = new Career("Software Engineer", "Build App's,", 1000.00);
         careerList.add(softwareEngineer);
     }
-
-    public static void updateMethod(String oldJobTitle, Career upCareer){
+    @Override
+    public  void updateMethod(String oldJobTitle, Career upCareer){
         String newJobTitle = upCareer.getJobTitle();
         String newDescription = upCareer.getJobDescription();
         Double newSalary = upCareer.getSalary();
@@ -29,20 +29,21 @@ public class CareerRepo {
         }
 
     }
-
-    public static List<Career> getCareerList() {
+    @Override
+    public  List<Career> getCareerList() {
         return careerList;
     }
-
-    public static void addCareer(Career newCareer){
+    @Override
+    public  void addCareer(Career newCareer){
         careerList.add(newCareer);
     }
-
-    public static void deleteAllCareer(){
+    @Override
+    public  void deleteAllCareer(){
         careerList.clear();
     }
 
-    public static Boolean deleteCareer(String delCareer){
+    @Override
+    public Boolean deleteCareer(String delCareer) {
         for(Career career : getCareerList()) {
             if (career.getJobTitle().equals(delCareer)) {
                 return careerList.remove(career);
@@ -51,13 +52,14 @@ public class CareerRepo {
         return null ;
     }
 
-    public static Career searchCareer(String theCareer){
-       for(Career career : getCareerList()){
-           if(career.getJobTitle().equals(theCareer)){
-               return career;
-           }
-       }
-    return null;
+    @Override
+    public Career searchCareer(String theCareer) {
+        for(Career career : getCareerList()){
+            if(career.getJobTitle().equals(theCareer)){
+                return career;
+            }
+        }
+        return null;
     }
 
 }
