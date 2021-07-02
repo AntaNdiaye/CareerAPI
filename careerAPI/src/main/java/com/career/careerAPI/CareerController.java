@@ -14,9 +14,9 @@ public class CareerController {
         public CareerController(CareerRepo careerRepo) {
             this.careerRepo = careerRepo;
         }
-    @PutMapping("/Careers/{delCareer}")
-        public void updateCareer(){
-            
+    @PutMapping("/Careers/{oldJobTitle}")
+        public void updateCareer(@PathVariable String oldJobTitle ,@RequestBody Career upCareer){
+            CareerRepo.updateMethod(oldJobTitle,upCareer);
     }
     @GetMapping("/Careers")
         public List<Career> allCareers() {
