@@ -14,8 +14,11 @@ public class CareerController {
         public CareerController(CareerRepo careerRepo) {
             this.careerRepo = careerRepo;
         }
-
-        @GetMapping("/Careers")
+    @PutMapping("/Careers/{delCareer}")
+        public void updateCareer(){
+            
+    }
+    @GetMapping("/Careers")
         public List<Career> allCareers() {
             return CareerRepo.getCareerList();
         }
@@ -39,6 +42,7 @@ public class CareerController {
         public Boolean deleteCareer(@PathVariable String delCareer) {
             return CareerRepo.deleteCareer(delCareer);
     }
+
 
 }
 

@@ -13,7 +13,6 @@ public class CareerRepo {
         Career softwareEngineer = new Career("Software Engineer", "Build App's,", 1000.00);
         careerList.add(softwareEngineer);
     }
-
     public static List<Career> getCareerList() {
         return careerList;
     }
