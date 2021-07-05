@@ -1,6 +1,8 @@
 # CarrerAPI
 
 **CareerAPI** is an app that allows users to see careers in Computer Science a small description of what they do and there average salary.
+It was build usin Java Web services and RESTful API using Spring Boot!
+
 
 By: **Anta Ndiaye, Alfredo Palacios, Bennie Lee**
 
@@ -12,14 +14,14 @@ The following functionality are completed:
 
 * [x] User can **view the list of careers**
 * [ ] User can **successfully search for a specific career**
-* [ ] Business can **view the list of careers**
+* [x] Business can **view the list of careers**
 * [ ] Business can **successfully search or a specific career**
 * [ ] Business can **Update the information of an old career**
-* [ ] Admin can **view the list of careers**
+* [x] Admin can **view the list of careers**
 * [ ] Admin can **successfully search or a specific career**
 * [ ] Admin can  **Update the information of an old career**
 * [ ] Admin can **Delete a specific career**
-* [ ] Admin can **Delate all careers**
+* [x] Admin can **Delate all careers**
 
 
 
