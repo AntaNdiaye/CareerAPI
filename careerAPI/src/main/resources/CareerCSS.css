@@ -1,0 +1,17 @@
+.two-col{
+    display: grid;
+    grid-template-columns: 48% 48%;
+    column-gap: 4%;
+    margin: 5%;
+}
+
+.new-expense{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    row-gap: 10px;
+}
+
+.expense {
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+}

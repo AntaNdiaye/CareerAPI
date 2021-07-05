@@ -1,8 +1,10 @@
 package com.career.careerAPI;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 import java.util.List;
-
+@Component
 public class User {
 
     private Date userDob;

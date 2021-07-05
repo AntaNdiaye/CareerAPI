@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+</head>
+<body>
+<center>
+    <h1>User</h1>
+    <fieldset>
+        <ul class="list-group" id="careerList"></ul>
+        <form class="mt-5">
+
+        </form>
+        </script>
+    </fieldset>
+</center>
+
+<center>
+
+    <br><br>
+
+    <!--<form action= "http://localhost:8080/Careers">-->
+
+    <label for="jobTitle">jobTitle</label><br><br>
+    <input type="text" id="jobTitle" name="jobTitle"><br><br>
+
+    <label for="jobDescription">jobDescription</label><br><br>
+    <input type="text" id="jobDescription" name="jobDescription"><br><br>
+
+    <label for="salary">salary</label><br><br>
+    <input type="number" id="salary" name="salary" min="0"><br><br>
+
+    <br><br>
+    <button onclick="searchCareers(event)">Search</button>&nbsp;
+    </form>
+    <script src="CareerJS.js"></script>
+</center>
+</body>
+</html>
