@@ -5,6 +5,8 @@ It was build usin Java Web services and RESTful API using Spring Boot!
 
 
 By: **Anta Ndiaye, Alfredo Palacios, Bennie Lee**
+<img src="https://github.com/AntaNdiaye/CareerAPI/blob/main/Screen%20Shot%202021-07-02%20at%2010.54.07%20AM.png">
+
 
 Time spent: ** ** hours spent in total
 
@@ -26,6 +28,7 @@ The following functionality are completed:
 * [x] Admin can **Delate all careers**
 
 
+<img src='https://github.com/AntaNdiaye/CareerAPI/blob/main/Career1.gif' title='Video Walkthrough' width='' alt='https://github.com/AntaNdiaye/CareerAPI/blob/main/Career1.gif' />
 
 
 ## Notes
