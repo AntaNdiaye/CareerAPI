@@ -7,11 +7,19 @@ import java.util.List;
 @Component
 public class User {
 
+    private int id;
     private Date userDob;
     private String userName;
     private String userType;
     private List<Career> careerList;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getUserName() {
         return userName;
