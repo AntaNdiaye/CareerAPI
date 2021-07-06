@@ -25,10 +25,14 @@ public class CareerController {
             return careerRepo.getCareerList();
         }
 
-        @GetMapping("/Careers/{theCareer}")
-        public Career searchCareers(@PathVariable String theCareer) {
-            return careerRepo.searchCareer(theCareer);
-        }
+//        @GetMapping("/Careers/{theCareer}")
+//        public Career searchCareers(@PathVariable String theCareer) {
+//            return careerRepo.searchCareer(theCareer);
+//        }
+@GetMapping("/Careers/{id}")
+public Career searchCareers(@PathVariable int id) {
+    return careerRepo.searchCareer(id);
+}
 
         @PostMapping("/Career")
         public void addCareer(@RequestBody Career newcareer) {
@@ -39,10 +43,14 @@ public class CareerController {
         public void deleteAllCareer() {
             careerRepo.deleteAllCareer();
         }
-        @DeleteMapping("/Careers/{id}")
-        public Boolean deleteCareer(@PathVariable String delCareer) {
-            return careerRepo.deleteCareer(delCareer);
-    }
+//        @DeleteMapping("/Careers/{id}")
+//        public Boolean deleteCareer(@PathVariable String delCareer) {
+//            return careerRepo.deleteCareer(delCareer);
+//    }
+@DeleteMapping("/Careers/{id}")
+public Boolean deleteCareer(@PathVariable int id) {
+    return careerRepo.deleteCareer(id);
+}
 
 
 }

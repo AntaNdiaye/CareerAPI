@@ -14,6 +14,7 @@ public class Career {
         this.id = id;
     }
     public Career(int id,String jobTitle, String jobDescription, double salary) {
+        this.id = id;
         this.jobTitle = jobTitle;
         this.jobDescription = jobDescription;
         this.salary = salary;

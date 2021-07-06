@@ -8,6 +8,8 @@ public interface Career_Repo {
     void addCareer(Career newCareer);
     List<Career> getCareerList();
     void deleteAllCareer();
-    Boolean deleteCareer(String delCareer);
-    Career searchCareer(String theCareer);
+//    Boolean deleteCareer(String delCareer);
+Boolean deleteCareer(int id);
+//    Career searchCareer(String theCareer);
+    Career searchCareer(int id);
 }

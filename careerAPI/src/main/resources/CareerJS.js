@@ -1,6 +1,7 @@
 function addCareer(e){
     e.preventDefault();
     let careerList = {
+        id: document.getElementById("id").value,
         jobTitle: document.getElementById("jobTitle").value,
         jobDescription: document.getElementById("jobDescription").value,
         salary: document.getElementById("salary").value
@@ -23,13 +24,23 @@ function deleteAllCareer(){
     ).then(()=>window.location.reload(true))
 }
  async function deleteCareer(id) {
-     let response = await fetch('http://localhost:8080/Careers/${id}', {method: 'DELETE'});
-     if (response.ok) {
-         allCareers();
-         alert('Career has been deleted successfully!');
-     } else {
-         alert('HTTP-Error: " + response.status');
-     }
+     //let response = await fetch('http://localhost:8080/Careers/${id}', {method: 'DELETE', headers: {'Content-Type': 'application/json',},});
+    //fetch('http://localhost:8080/Careers/${id}', {method: 'DELETE', headers: {'Content-Type': 'application/json',},});
+//     if (response.ok) {
+//
+//         alert('Career has been deleted successfully!');
+//         allCareers();
+//     } else {
+//         alert('HTTP-Error: " + response.status');
+//     }
+ var idNum = document.getElementById("id").value
+   // var bookTitle = document.getElementById("title").value
+        fetch("http://localhost:8080/Careers/" + idNum,
+        {
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json',},
+        }
+    ).then(()=>window.location.reload(true))
  }
 async function updateCareer(id, productForm){
     let response = await fetch(`http://localhost:8080/Careers/${id}`,
@@ -46,13 +57,21 @@ async function updateCareer(id, productForm){
     } }
 
  async function searchCareers(id) {
-     let response = await fetch('http://localhost:8080/Careers/${id}');
-     if (response.ok) {
-         return await response.json();
-     } else {
-         alert("HTTP-Error: " + response.status);
-         return null;
-     }
+//     let response = await fetch('http://localhost:8080/Careers/${id}');
+//     if (response.ok) {
+//         return await response.json();
+//     } else {
+//         alert("HTTP-Error: " + response.status);
+//         return null;
+//     }
+var idNum = document.getElementById("id").value
+   // var bookTitle = document.getElementById("title").value
+        fetch("http://localhost:8080/Careers/" + idNum,
+        {
+            method: 'GET',
+            headers: {'Content-Type': 'application/json',},
+        }
+    ).then(()=>window.location.reload(true))
  };
 async function allCareers(){
     let response = await fetch("http://localhost:8080/Careers");
@@ -60,6 +79,7 @@ async function allCareers(){
     let careerList = body.map(careerList => {
         return (
             `<li class="list-group-item careerList">
+            <p>${careerList.id}</p>
                 <p>${careerList.jobTitle}</p>
                 <p>${careerList.jobDescription}</p>
                 <p>$${careerList.salary}</p>
@@ -69,3 +89,7 @@ async function allCareers(){
     document.getElementById("careerList").innerHTML = careerList;
 }
 allCareers();
+//if(searchCareers(idNum)){
+//    fetch("http://localhost:8080/Careers/" + idNum)
+//}
+//allCareers();

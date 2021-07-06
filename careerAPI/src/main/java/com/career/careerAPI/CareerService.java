@@ -16,7 +16,7 @@ public class CareerService implements Career_Repo{ //implements the career servi
     }
 
     @Override
-    public  void updateMethod(String oldJobTitle, Career upCareer){
+    public  void updateMethod(String oldJobTitle, Career upCareer){  //  implement id in method
         String newDescription = upCareer.getJobDescription(); //string var to get the career job description
         Double newSalary = upCareer.getSalary(); //string var to get the career's new salary
 
@@ -43,20 +43,38 @@ public class CareerService implements Career_Repo{ //implements the career servi
         careerList.clear();
     }
 
-    @Override
-    public Boolean deleteCareer(String delCareer) { //Boolean Method to delete a Career
-        for(Career career : getCareerList()) { // for each loop to get the career list
-            if (career.getJobTitle().equals(delCareer)) { //if the job title is equalled to the parameter delCareer
-                return careerList.remove(career); // will now return the career list with the career removed
-            }
+//    @Override  //  implement id in method
+//    public Boolean deleteCareer(String delCareer) { //Boolean Method to delete a Career
+//        for(Career career : getCareerList()) { // for each loop to get the career list
+//            if (career.getJobTitle().equals(delCareer)) { //if the job title is equalled to the parameter delCareer
+//                return careerList.remove(career); // will now return the career list with the career removed
+//            }
+//        }
+//        return null ;
+//    }
+@Override  //  implement id in method
+public Boolean deleteCareer(int id) { //Boolean Method to delete a Career
+    for(Career career : getCareerList()) { // for each loop to get the career list
+        if (career.getId() == id) { //if the job title is equalled to the parameter delCareer
+            return careerList.remove(career); // will now return the career list with the career removed
         }
-        return null ;
     }
+    return null ;
+}
+//    @Override  //  implement id in method
+//    public Career searchCareer(String theCareer) { // SearchMethod to search for a career
+//        for(Career career : getCareerList()){ // for each method to get the careerList
+//            if(career.getJobTitle().equals(theCareer)){ //if the job title is equalled to the career in the parameter
+//                return career; // returns the career that is searched
+//            }
+//        }
+//        return null;
+//    }
 
-    @Override
-    public Career searchCareer(String theCareer) { // SearchMethod to search for a career
+    @Override  //  implement id in method
+    public Career searchCareer(int id) { // SearchMethod to search for a career
         for(Career career : getCareerList()){ // for each method to get the careerList
-            if(career.getJobTitle().equals(theCareer)){ //if the job title is equalled to the career in the parameter
+            if(career.getId() == id){ //if the job title is equalled to the career in the parameter
                 return career; // returns the career that is searched
             }
         }
