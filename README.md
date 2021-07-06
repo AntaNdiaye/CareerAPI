@@ -13,16 +13,16 @@ Time spent: ** ** hours spent in total
 The following functionality are completed:
 
 * [x] User can **view the list of careers**
-* [ ] User can **successfully search for a specific career**
+* [x] User can **successfully search for a specific career**
 * [x] Business can **view the list of careers**
 * [x] Business can ***add a new career***
-* [ ] Business can **successfully search or a specific career**
-* [ ] Business can **Update the information of an old career**
+* [x] Business can **successfully search or a specific career**
+* [x] Business can **Update the information of an old career**
 * [x] Admin can **view the list of careers**
 * [x] Admin can ***add a new career***
-* [ ] Admin can **successfully search or a specific career**
-* [ ] Admin can  **Update the information of an old career**
-* [ ] Admin can **Delete a specific career**
+* [x] Admin can **successfully search or a specific career**
+* [x] Admin can  **Update the information of an old career**
+* [x] Admin can **Delete a specific career**
 * [x] Admin can **Delate all careers**
 
 
